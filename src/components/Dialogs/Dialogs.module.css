@@ -1,0 +1,31 @@
+.container {
+   display: grid;
+   grid-template-columns: 2fr 8fr;
+   grid-template-rows:  1fr;
+   /* grid-template-areas:   'n m'; */
+   padding: 10px;
+}
+
+.names__chats {
+   /* grid-area: n; */
+}
+
+.messages_user {
+/* grid-area: m; */
+}
+
+.name__chat {
+   margin-bottom: 5px;
+}
+
+.msg {
+   margin-bottom: 5px;
+}
+
+.active {
+   
+}
+
+.name__chat:focus {
+   color: rebeccapurple;
+}

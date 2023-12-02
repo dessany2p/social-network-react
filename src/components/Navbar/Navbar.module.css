@@ -1,0 +1,38 @@
+
+
+.nav {
+   grid-area: n;
+   background-color: brown;
+   margin-top: 15px;
+}
+
+.item {
+   display: flex;
+}
+.item > a {
+   color: aliceblue;
+   text-decoration: none;
+   
+}
+
+a {
+   text-decoration: none;
+}
+
+nav a:focus {
+   color: greenyellow;
+   font-size: 18px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      transition: all 0.4s;
+}
+
+.link {
+   display: flex;
+   margin: 10px auto;
+}
+
+.active {
+   color: goldenrod;
+   font-size: 22px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
