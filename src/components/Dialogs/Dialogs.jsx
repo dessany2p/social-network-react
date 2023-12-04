@@ -19,21 +19,33 @@ const MsgItem = (props) => {
 }
 
 export const Dialogs = (props) => {
+
+   let dialogsData = [
+      { id: '1', name: 'Никита' },
+      { id: '2', name: 'Стас' },
+      { id: '3', name: 'Гена' },
+      { id: '4', name: 'Турбо' },
+      { id: '5', name: 'Дюша Метёлкин' }
+   ]
+   let msgData = [
+      { id: '1', text: 'ipsum dolor sit' },
+      { id: '2', text: 'Lorem ipsum dolor bro' },
+      { id: '3', text: 'Lorem ipsum sit bro' },
+      { id: '4', text: 'Lorem dolor sit bro' },
+      { id: '5', text: 'ipsum dolor sit bro Метёлкин' }
+   ]
+
+   let dialogsElements = dialogsData.map(dialog => <DialogItem id={dialog.id} name={dialog.name} />);
+   // console.log(dialogsElements)
+   let msgElements = msgData.map(msg => <MsgItem id={msg.id} text={msg.text} />);
+
    return (
       <div className={s.container}>
          <div className={s.names__chats}>
-            <DialogItem id='1' name='Никита' />
-            <DialogItem id='2' name='Стас' />
-            <DialogItem id='3' name='Гена' />
-            <DialogItem id='4' name='Турбо' />
-            <DialogItem id='5' name='Дюша Метёлкин' />
+            {dialogsElements}
          </div>
          <div className={s.messages_user}>
-            <MsgItem text='Lorem ipsum dolor sit bro' />
-            <MsgItem text='hello' />
-            <MsgItem text='Lorem ipsum dolor sit amet' />
-            <MsgItem text='Lorem ipsum dolor sit amet.' />
-            <MsgItem text='hello yo' />
+            {msgElements}
          </div>
       </div>
    )

@@ -1,6 +1,7 @@
 .header {
    grid-area: h;
    background-color: aquamarine;
+   display: flex;
 }
 
 .logo__container {
@@ -14,5 +15,12 @@
    padding-left: 5%;
    height: 60%;
    opacity: 54%;
+}
+
+.switch_img {
+   width: 60px;
+   height: auto;
+   cursor: pointer;
+   margin-left: 80%;
 }
 

@@ -4,6 +4,7 @@
    grid-template-rows:  1fr;
    /* grid-template-areas:   'n m'; */
    padding: 10px;
+   font-size: 20px;
 }
 
 .names__chats {

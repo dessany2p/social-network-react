@@ -1,5 +1,5 @@
 import React from 'react';
-import { MyNews } from './myPosts/MyNews.jsx'
+import { MyPosts } from './myPosts/MyPosts.jsx'
 import s from './Profile.module.css';
 
 
@@ -18,7 +18,7 @@ export const Profile = () => {
             </div>
          </div>
 
-         <MyNews />
+         <MyPosts />
 
       </div>
    )

@@ -24,3 +24,14 @@
    align-items: center;
 }
 
+.likesCount {
+   display: inline-flex;
+   align-items: center;
+   color: azure;
+   padding-left: 7px;
+   img{ 
+      width: 20px;
+      height: 20px;
+   }
+}
+
