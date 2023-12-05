@@ -26,9 +26,9 @@ const App = (props) => {
         <Navbar />
         <div className='content'>
           <Routes>
-            <Route path='/' element={<Profile posts={props.posts} />} />
-            <Route path='/profile' element={<Profile posts={props.posts} />} />
-            <Route path='/dialogs' element={<Dialogs msg={props.msg} dialog={props.dialog} />} />
+            <Route path='/' element={<Profile posts={props.state.posts} />} />
+            <Route path='/profile' element={<Profile posts={props.state.posts} />} />
+            <Route path='/dialogs' element={<Dialogs msg={props.state.msg} dialog={props.state.dialogs} />} />
             <Route path='/news' Component={News} />
             <Route path='/music' Component={Music} />
             <Route path='/settings' Component={Settings} />
