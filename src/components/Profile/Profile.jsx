@@ -3,7 +3,8 @@ import { MyPosts } from './myPosts/MyPosts.jsx'
 import s from './Profile.module.css';
 
 
-export const Profile = () => {
+export const Profile = (props) => {
+   console.log(props)
    return (
       <div>
          <img className='banner' src='https://lemon.school/storage/2023/07/img_7017-780x258.png' alt=''></img>
@@ -17,8 +18,8 @@ export const Profile = () => {
                <span>Lorem ipsum dolor sit.</span>
             </div>
          </div>
-
-         <MyPosts />
+         {/*  */}
+         <MyPosts posts={props.posts} />
 
       </div>
    )

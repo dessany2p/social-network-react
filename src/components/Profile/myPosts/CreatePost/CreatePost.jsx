@@ -6,8 +6,8 @@ export const CreatePost = (props) => {
 
       <div className={s.container}>
          <div>
-            <textarea className={s.entry__field} defaultValue={props.value}>
-               {props.entry}
+            <textarea className={s.entry__field} defaultValue={props.entry}>
+
             </textarea>
          </div>
          <div>
