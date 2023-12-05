@@ -22,10 +22,16 @@ export let posts = [
 ]
 
 export let state = {
-   posts: posts,
-   dialogs: dialogsData,
+   profilePage: {
+      posts: posts,
 
-   msg: msgData
+   },
+
+   msgPage: {
+      dialogs: dialogsData,
+      msg: msgData
+   }
 }
 
-console.log('STATE : ', state)
+// Todo: delete
+// console.log('STATE : ', state)

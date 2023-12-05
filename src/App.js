@@ -15,8 +15,6 @@ import {
 } from 'react-router-dom';
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
-// import { msgData, dialogsData, posts } from '.';
-// import { Profile } from './components/Profile/Profile';
 
 const App = (props) => {
   return (
@@ -26,9 +24,20 @@ const App = (props) => {
         <Navbar />
         <div className='content'>
           <Routes>
-            <Route path='/' element={<Profile posts={props.state.posts} />} />
-            <Route path='/profile' element={<Profile posts={props.state.posts} />} />
-            <Route path='/dialogs' element={<Dialogs msg={props.state.msg} dialog={props.state.dialogs} />} />
+            <Route path='/'
+              element={
+                <Profile
+                  posts={props.state.profilePage.posts}
+                />} />
+            <Route path='/profile' element={
+              <Profile
+                posts={props.state.profilePage.posts}
+              />} />
+            <Route path='/dialogs'
+              element={
+                <Dialogs
+                  state={props.state.msgPage}
+                />} />
             <Route path='/news' Component={News} />
             <Route path='/music' Component={Music} />
             <Route path='/settings' Component={Settings} />
