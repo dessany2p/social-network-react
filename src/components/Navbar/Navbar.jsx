@@ -20,6 +20,13 @@ export const Navbar = () => {
          <div className={s.item}>
             <Link className={`${s.link}`} to='/settings'> Settings </Link>
          </div>
+
+
       </nav>
    )
 }
+
+//TODO Добавить блок Друзья/  Интегрировать данные в STATE и прокидывать внутрь компоненты через Props.
+/*   {
+   В нем 3 иконки с никами 
+} */

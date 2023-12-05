@@ -10,8 +10,8 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  Navigate
+  // Link,
+  // Navigate
 } from 'react-router-dom';
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
@@ -40,7 +40,7 @@ const App = (props) => {
                 />} />
             <Route path='/news' Component={News} />
             <Route path='/music' Component={Music} />
-            <Route path='/settings' Component={Settings} />
+            <Route path='/settings' element={<Settings />} />
           </Routes>
         </div>
       </div>
