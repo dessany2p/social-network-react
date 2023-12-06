@@ -32,11 +32,11 @@ export const Dialogs = (props) => {
 
       (dialog, i) => <DialogItem key={dialog.id + i} src={dialog.img} id={dialog.id} name={dialog.name} />);
 
-   console.log(dialogsElements)
+   // console.log(dialogsElements)
    let msgElements = props.state.msg.map(
       msg => <MsgItem id={msg.id} text={msg.text} />);
 
-   console.log(props.state.dialogs[0].id)
+   // console.log(props.state.dialogs[0].id)
    return (
       <div className={s.container}>
          <div className={s.names__chats}>

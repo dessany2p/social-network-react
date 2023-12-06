@@ -12,7 +12,8 @@ export const Post = (props) => {
             {props.msg}
          </span>
          <span className={s.likesCount}>
-            {props.likesCount}<img src={icon} alt="icon_heart" />
+            {props.likesCount}
+            <img src={icon} alt="icon_heart" />
          </span>
       </div>
 

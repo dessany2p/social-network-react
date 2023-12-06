@@ -4,13 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { state } from './redux/state';
+import { addInfo } from './redux/state';
 
 // мои игры
+
+// addInfo('YOYO i add post')
+// console.log(state)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App state={state} />
+    <App state={state} addPost={addInfo} />
   </React.StrictMode>
 );
 

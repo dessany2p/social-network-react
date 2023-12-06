@@ -15,8 +15,8 @@ export let msgData = [
    { id: 'user1', text: 'ipsum dolor sit' },
    { id: 'user2', text: 'Lorem ipsum dolor bro' },
    { id: 'user3', text: 'Lorem ipsum sit bro' },
-   { id: 'user4', text: 'Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. ' },
-   { id: 'user5', text: 'ipsum dolor sit bro Метёлкин' }
+   // { id: 'user4', text: 'Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. ' },
+   { id: 'user5', text: 'dolor sit bro Метёлкин' }
 ]
 export let posts = [
    { id: 1, msg: 'Hi how are u?', likesCount: 21 },
@@ -24,6 +24,16 @@ export let posts = [
    { id: 3, msg: 'Go walk?', likesCount: 21 },
    { id: 4, msg: 'No, I`m domosed', likesCount: 2 },
 ]
+
+export let addInfo = (postMessage) => {
+   debugger;
+   let newPost = {
+      id: 5,
+      msg: postMessage,
+      likesCount: 0
+   }
+   state.profilePage.posts.push(newPost)
+}
 
 export let state = {
    profilePage: {

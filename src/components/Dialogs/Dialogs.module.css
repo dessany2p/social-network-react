@@ -37,12 +37,14 @@ margin: 0;
          font-size: 18px;
 }
 
+
 .blocke {
    height: 30px;
    padding: 10px;
-   text-overflow: ellipsis;
+   /* text-overflow: ellipsis; */
             overflow: hidden;
 }
+
 .msg_text {
    height: 40px;
    padding: 12px;
@@ -65,4 +67,8 @@ img {
 
 .userName {
       margin-left: 10px;
+}
+
+.btn_send {
+   margin-left: 10px;
 }

@@ -4,6 +4,7 @@ import s from './Profile.module.css';
 
 
 export const Profile = (props) => {
+   console.log('Profile props: ', props)
    return (
       <div>
 
@@ -21,7 +22,7 @@ export const Profile = (props) => {
          </div>
 
          <MyPosts
-            posts={props.posts} />
+            posts={props.posts} addPost={props.addPost} />
       </div>
    )
 }

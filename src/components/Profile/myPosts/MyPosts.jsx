@@ -7,6 +7,7 @@ import { CreatePost } from './CreatePost/CreatePost';
 
 
 export const MyPosts = (props) => {
+   console.log('myPosts props:', props)
 
    let postsElements =
       props.posts.map((p, i) => <Post key={i} msg={p.msg} likesCount={p.likesCount} />)
@@ -15,7 +16,7 @@ export const MyPosts = (props) => {
       <div className={s.container}>
          <h3>My posts</h3>
 
-         <CreatePost entry='Введите сообщение' defaultValue='' />
+         <CreatePost addPost={props.addPost} entry='Введите сообщение' defaultValue='' />
 
          {postsElements}
 
