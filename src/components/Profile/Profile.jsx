@@ -4,7 +4,6 @@ import s from './Profile.module.css';
 
 
 export const Profile = (props) => {
-   console.log('Profile props: ', props)
    return (
       <div>
 

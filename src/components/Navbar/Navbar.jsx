@@ -24,7 +24,7 @@ export const Navbar = (props) => {
             <Link className={`${s.link}`} to='/settings'> Settings </Link>
          </div>
          <div className={s.item}>
-            <Link className={`${s.link}`} to='/friends'> Friends  </Link>
+            {/* <Link className={`${s.link}`} to='/friends'> Friends  </Link> */}
             {/* {<Friend src={props.src} name={props.name} />} */}
          </div>
 

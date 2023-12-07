@@ -16,10 +16,8 @@ import {
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
 import { Friends } from './components/Friends/Friends';
-// import { addInfo } from './redux/state';
 
 const App = (props) => {
-  console.log('App.js props:', props)
   return (
     <Router>
       <div className="app-wrapper">
@@ -31,6 +29,7 @@ const App = (props) => {
               element={
                 <Profile
                   posts={props.state.profilePage.posts}
+                  addPost={props.addPost}
                 />} />
             <Route path='/profile' element={
               <Profile
@@ -45,7 +44,7 @@ const App = (props) => {
             <Route path='/news' Component={News} />
             <Route path='/music' Component={Music} />
             <Route path='/settings' element={<Settings />} />
-            <Route path='/friends' element={<Friends state={props.state.msgPage.dialogs} />} />
+            {/* <Route path='/friends' element={<Friends state={props.state.msgPage.dialogs} />} /> */}
           </Routes>
         </div>
       </div>

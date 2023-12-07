@@ -3,6 +3,7 @@ import icon2 from './icons/2_icon.png'
 import icon3 from './icons/3_icon.png'
 import icon4 from './icons/4_icon.png'
 import default_icon from './icons/default_icon.png'
+import { rerenderEntireTree } from '../render'
 
 export let dialogsData = [
    { id: 'user1', name: 'Никита', img: icon },
@@ -26,13 +27,13 @@ export let posts = [
 ]
 
 export let addInfo = (postMessage) => {
-   debugger;
    let newPost = {
       id: 5,
       msg: postMessage,
       likesCount: 0
    }
    state.profilePage.posts.push(newPost)
+   rerenderEntireTree(state);
 }
 
 export let state = {
@@ -43,10 +44,10 @@ export let state = {
       dialogs: dialogsData,
       msg: msgData
    },
-   // Подумать над организацией объекта СайдБар
-
 }
 
+// Подумать над организацией объекта СайдБар
+//TODO: Нужен ли мне вообще этот объект? Не получилось организовать взаимодействие между двумя
 // export let icons = {
 //    sideBar: {
 //       id: {
@@ -58,6 +59,3 @@ export let state = {
 //       default_icon: default_icon
 //    }
 // }
-
-// Todo: delete
-// console.log('STATE : ', state)

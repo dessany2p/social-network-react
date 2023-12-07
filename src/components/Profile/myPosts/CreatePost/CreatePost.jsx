@@ -1,22 +1,20 @@
-import React, { createRef } from 'react';
+import React from 'react';
 import s from './CreatePost.module.css'
 
 export const CreatePost = (props) => {
-   console.log('createPost props:', props)
 
-   let newPostElement = createRef();
-   let createNewPost = (value) => {
-      debugger;
+   let newPostElement = React.createRef();
+   let createNewPost = () => {
       let text = newPostElement.current.value;
       props.addPost(text)
+      newPostElement.current.value = 'Хотите рассказать больше?';
    }
 
    return (
 
       <div className={s.container}>
          <div>
-            <textarea ref={newPostElement} className={s.entry__field} defaultValue={props.entry}>
-
+            <textarea ref={newPostElement} state={props.state} className={s.entry__field} defaultValue={props.entry}>
             </textarea>
          </div>
          <div>
