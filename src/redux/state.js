@@ -16,7 +16,7 @@ export let msgData = [
    { id: 'user1', text: 'ipsum dolor sit' },
    { id: 'user2', text: 'Lorem ipsum dolor bro' },
    { id: 'user3', text: 'Lorem ipsum sit bro' },
-   // { id: 'user4', text: 'Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. ' },
+   { id: 'user4', text: 'Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. ' },
    { id: 'user5', text: 'dolor sit bro Метёлкин' }
 ]
 export let posts = [
@@ -26,19 +26,32 @@ export let posts = [
    { id: 4, msg: 'No, I`m domosed', likesCount: 2 },
 ]
 
-export let addInfo = (postMessage) => {
+
+
+export let addInfo = () => {
    let newPost = {
       id: 5,
-      msg: postMessage,
+      msg: state.profilePage.newPostText,
       likesCount: 0
    }
    state.profilePage.posts.push(newPost)
+
+   state.profilePage.newPostText = '';
    rerenderEntireTree(state);
+}
+
+
+
+export let updateNewPostText = (newText) => {
+   state.profilePage.newPostText = newText;
+
+   rerenderEntireTree(state)
 }
 
 export let state = {
    profilePage: {
       posts: posts,
+      newPostText: 'Введите сообщение',
    },
    msgPage: {
       dialogs: dialogsData,

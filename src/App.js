@@ -15,9 +15,10 @@ import {
 } from 'react-router-dom';
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
-import { Friends } from './components/Friends/Friends';
+// import { Friends } from './components/Friends/Friends';
 
 const App = (props) => {
+  // console.log(props, 'APP')
   return (
     <Router>
       <div className="app-wrapper">
@@ -28,13 +29,15 @@ const App = (props) => {
             <Route path='/'
               element={
                 <Profile
-                  posts={props.state.profilePage.posts}
+                  profilePage={props.state.profilePage}
                   addPost={props.addPost}
+                  updateNewPostText={props.updateNewPostText}
                 />} />
             <Route path='/profile' element={
               <Profile
-                posts={props.state.profilePage.posts}
+                profilePage={props.state.profilePage}
                 addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />} />
             <Route path='/dialogs'
               element={

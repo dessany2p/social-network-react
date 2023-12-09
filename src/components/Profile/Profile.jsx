@@ -4,6 +4,7 @@ import s from './Profile.module.css';
 
 
 export const Profile = (props) => {
+   // console.log('profilePage:', props)
    return (
       <div>
 
@@ -21,7 +22,10 @@ export const Profile = (props) => {
          </div>
 
          <MyPosts
-            posts={props.posts} addPost={props.addPost} />
+            posts={props.profilePage.posts}
+            addPost={props.addPost}
+            newPostText={props.profilePage.newPostText}
+            updateNewPostText={props.updateNewPostText} />
       </div>
    )
 }

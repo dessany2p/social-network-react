@@ -3,7 +3,7 @@ import s from './Post.module.css';
 import icon from './heart_like.png'
 
 export const Post = (props) => {
-
+   // console.log(props)
    return (
 
       <div className={s.item}>

@@ -13,10 +13,10 @@ export const MsgItem = (props) => {
    return (
       <div className={s.msg}>
          <div className={s.blocke}>
-            <textarea ref={newPostElement} name="" id="" cols="50" rows="1">
+            {/* <textarea ref={newPostElement} name="" id="" cols="50" rows="1">
                Салам Алексус
             </textarea>
-            <button onClick={createNewPost} className={s.btn_send}>create</button>
+            <button onClick={createNewPost} className={s.btn_send}>create</button> */}
             <span className={s.msg_text}>
                {props.text}
             </span>
