@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './Post.module.css';
 import icon from './heart_like.png'
 
 export const Post = (props) => {
    // console.log(props)
+   const [count, setCount] = useState(0)
+   const handleInc = () => {
+      setCount(count + 1)
+   }
    return (
 
       <div className={s.item}>
@@ -12,8 +16,10 @@ export const Post = (props) => {
             {props.msg}
          </span>
          <span className={s.likesCount}>
-            {props.likesCount}
-            <img src={icon} alt="icon_heart" />
+            <span className={s.count_likes}>
+               {props.likesCount + count}
+            </span>
+            <img className={s.icon_click} src={icon} onClick={handleInc} alt="icon_heart" />
          </span>
       </div>
 

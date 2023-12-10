@@ -3,7 +3,17 @@ import icon2 from './icons/2_icon.png'
 import icon3 from './icons/3_icon.png'
 import icon4 from './icons/4_icon.png'
 import default_icon from './icons/default_icon.png'
-import { rerenderEntireTree } from '../render'
+// import { rerenderEntireTree } from '../render'
+import { observer } from '../index'
+
+let rerenderEntireTree = () => {
+   console.log()
+}
+
+
+export const subscribe = (observer) => {
+   rerenderEntireTree = observer;
+};
 
 export let dialogsData = [
    { id: 'user1', name: 'Никита', img: icon },
@@ -59,6 +69,7 @@ export let state = {
    },
 }
 
+window.state = state;
 // Подумать над организацией объекта СайдБар
 //TODO: Нужен ли мне вообще этот объект? Не получилось организовать взаимодействие между двумя
 // export let icons = {
