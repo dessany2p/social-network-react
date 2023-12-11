@@ -4,7 +4,6 @@
    grid-template-rows:  1fr;
    /* grid-template-areas:   'n m'; */
    padding: 10px;
-   font-size: 20px;
    box-sizing: border-box;
 }
 
@@ -20,7 +19,8 @@
    border: solid 1px;
    padding: 7px;
    border-radius: 10px;
-   
+   flex-wrap: nowrap;
+      width: 150px;
 }
 .name__chat:nth-last-child {
 margin: 0;
@@ -39,10 +39,10 @@ margin: 0;
 
 
 .blocke {
-   height: 30px;
-   padding: 10px;
-   /* text-overflow: ellipsis; */
-            overflow: hidden;
+   display: flex;
+      width: 50%;
+      align-items: center;
+      margin-right: 20px;
 }
 
 .msg_text {
