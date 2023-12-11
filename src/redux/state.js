@@ -44,21 +44,22 @@ export let store = {
       this._callSubscriber = observer;
    },
 
-   addInfo() {
-      let newPost = {
-         id: 5,
-         msg: this._state.profilePage.newPostText,
-         likesCount: 0
-      }
-      this._state.profilePage.posts.push(newPost)
-      this._state.profilePage.newPostText = '';
+   // TODO: Исходные методы, для дальнейшего рефакторинга. Пока закоментирую
+   // addInfo() {
+   //    let newPost = {
+   //       id: 5,
+   //       msg: this._state.profilePage.newPostText,
+   //       likesCount: 0
+   //    }
+   //    this._state.profilePage.posts.push(newPost)
+   //    this._state.profilePage.newPostText = '';
 
-      this._callSubscriber(this._state);
-   },
-   updateNewPostText(newText) {
-      this._state.profilePage.newPostText = newText;
-      this._callSubscriber(this._state)
-   },
+   //    this._callSubscriber(this._state);
+   // },
+   // updateNewPostText(newText) {
+   //    this._state.profilePage.newPostText = newText;
+   //    this._callSubscriber(this._state)
+   // },
 
    // Логика добавления постов вынесена в отдельный метод диспатч, с параметров action (где мы должны указать тип метода в виде строки)
    // action => { type: 'ADD-POST' } 
