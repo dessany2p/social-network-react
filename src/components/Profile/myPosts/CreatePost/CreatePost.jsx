@@ -7,7 +7,6 @@ export const CreatePost = (props) => {
    let newPostElement = React.createRef();
    let createNewPost = () => {
       props.addPost()
-      // props.updateNewPostText('Что-нибудь еще?')
    }
 
    let onPostChange = () => {
