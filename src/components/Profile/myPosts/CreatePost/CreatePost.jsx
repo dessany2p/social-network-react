@@ -5,13 +5,18 @@ export const CreatePost = (props) => {
    console.log('create[pst', props)
    console.log(props)
    let newPostElement = React.createRef();
+
    let createNewPost = () => {
-      props.addPost()
+      // В функции через props обращаюсь к методу dispatch (указывая тип/название метода: 'ADD-POST'), который хранит в себе логику добавления поста
+      props.dispatch({ type: 'ADD-POST' })
    }
 
    let onPostChange = () => {
       let text = newPostElement.current.value;
-      props.updateNewPostText(text)
+      // В функции через props обращаюсь к методу dispatch, который хранит в себе логику выведения символов в поле ввода.
+      // Выделяю этот объект (указывая тип/название метода: 'UPDATE-NEW-POST-TEXT' и его второй аргумент action.text = newText: text) в отдельную переменную action, которую передаю в качестве аргумента в dispatch.
+      let action = { type: 'UPDATE-NEW-POST-TEXT', newText: text };
+      props.dispatch(action)
    }
 
    return (
@@ -21,15 +26,16 @@ export const CreatePost = (props) => {
             <textarea
                ref={newPostElement}
                onChange={onPostChange}
-               state={props.state}
+               posts={props.posts}
                className={s.entry__field}
-               value={props.value} />
-            {/* /*placeholder={props.placeholder}*/}
+               value={props.value}
+            />
          </div>
          <div>
             <button onClick={createNewPost}> Отправить </button>
          </div>
       </div >
-      // value={props.newPostText}
    )
 }
+
+// {/* placeholder={props.placeholder}  */ }

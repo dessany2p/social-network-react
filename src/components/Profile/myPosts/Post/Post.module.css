@@ -6,6 +6,7 @@
    margin-bottom: 7px;
    width: 100%;
    height: auto;
+   align-items: center;
 }
 
 .item:nth-child(even) {
@@ -19,9 +20,7 @@
 }
 
 .topic__item {
-   padding: 4px 0 0 4px;
-   display: flex;
-   align-items: center;
+   padding: 4px 4px;
 }
 
 .likesCount {
@@ -29,15 +28,16 @@
    align-items: center;
    color: azure;
    padding-left: 7px;
-   img{ 
-      padding: 0 5px;
-      width: 20px;
-      height: 20px;
+}
+
+.icon_click {
+   width: 20px;
+   height: 20px;
+   padding: 0 5px;
       cursor:pointer;   
       
       opacity: 30%;
       transition: ease-out 3s;
-   }
 }
 
 .icon_click:hover {

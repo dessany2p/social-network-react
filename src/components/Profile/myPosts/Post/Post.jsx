@@ -14,10 +14,12 @@ export const Post = (props) => {
          <span className={s.topic__item}>
             {props.msg}
          </span>
+
+         <img className={s.icon_click} src={icon} onClick={handleInc} alt="icon_heart" />
          <span className={s.count_likes}>
             {props.likesCount + count}
          </span>
-         <img className={s.icon_click} src={icon} onClick={handleInc} alt="icon_heart" />
+
       </div>
 
    )

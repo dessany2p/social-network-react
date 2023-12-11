@@ -3,7 +3,6 @@ import icon2 from './icons/2_icon.png'
 import icon3 from './icons/3_icon.png'
 import icon4 from './icons/4_icon.png'
 import default_icon from './icons/default_icon.png'
-// import { observer } from '../index'
 
 
 
@@ -44,6 +43,7 @@ export let store = {
    subscribe(observer) {
       this._callSubscriber = observer;
    },
+
    addInfo() {
       let newPost = {
          id: 5,
@@ -58,6 +58,26 @@ export let store = {
    updateNewPostText(newText) {
       this._state.profilePage.newPostText = newText;
       this._callSubscriber(this._state)
+   },
+
+   // Логика добавления постов вынесена в отдельный метод диспатч, с параметров action (где мы должны указать тип метода в виде строки)
+   // action => { type: 'ADD-POST' } 
+   dispatchEvent(action) {
+      if (action.type === 'ADD-POST') {
+         debugger
+         let newPost = {
+            id: 5,
+            msg: this._state.profilePage.newPostText,
+            likesCount: 0
+         }
+         this._state.profilePage.posts.push(newPost)
+         this._state.profilePage.newPostText = '';
+
+         this._callSubscriber(this._state);
+      } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+         this._state.profilePage.newPostText = action.newText;
+         this._callSubscriber(this._state)
+      }
    }
 }
 
