@@ -4,7 +4,23 @@ import icon3 from './icons/3_icon.png'
 import icon4 from './icons/4_icon.png'
 import default_icon from './icons/default_icon.png'
 
+// Ввод в эксплутацию отдельных констант для сокращения дублирования кода и минимизации опечаток.
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
+// Выделяю логику возврата action в отдельные функции, которые экспортирую.
+
+export const actionCreatorAddPost = () => {
+   return {
+      type: ADD_POST
+   }
+}
+
+export const actionCreatorUpdateNewPostText = (text) => {
+   return {
+      type: UPDATE_NEW_POST_TEXT, newText: text
+   }
+}
 
 export let store = {
    _state: {
@@ -17,6 +33,7 @@ export let store = {
          ],
          newPostText: 'Введите сообщение',
       },
+
       msgPage: {
          dialogs: [
             { id: 'user1', name: 'Никита', img: icon },
@@ -34,6 +51,7 @@ export let store = {
          ]
       },
    },
+
    _callSubscriber() {
       console.log()
    },
@@ -64,18 +82,19 @@ export let store = {
    // Логика добавления постов вынесена в отдельный метод диспатч, с параметров action (где мы должны указать тип метода в виде строки)
    // action => { type: 'ADD-POST' } 
    dispatchEvent(action) {
-      if (action.type === 'ADD-POST') {
-         debugger
+      if (action.type === ADD_POST) {
+
          let newPost = {
             id: 5,
             msg: this._state.profilePage.newPostText,
             likesCount: 0
          }
+
          this._state.profilePage.posts.push(newPost)
          this._state.profilePage.newPostText = '';
-
          this._callSubscriber(this._state);
-      } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+
+      } else if (action.type === UPDATE_NEW_POST_TEXT) {
          this._state.profilePage.newPostText = action.newText;
          this._callSubscriber(this._state)
       }

@@ -1,17 +1,7 @@
 import React from 'react';
 import s from './CreatePost.module.css'
+import { actionCreatorAddPost, actionCreatorUpdateNewPostText } from '../../../../redux/state';
 
-// Выделяю логику возврата action в отдельную функцию.
-const actionCreatorAddPost = () => {
-   return {
-      type: 'ADD-POST'
-   }
-}
-const actionCreatorUpdateNewPostText = (text) => {
-   return {
-      type: 'UPDATE-NEW-POST-TEXT', newText: text
-   }
-}
 
 export const CreatePost = (props) => {
    console.log('create[pst', props)
