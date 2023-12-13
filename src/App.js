@@ -16,6 +16,7 @@ import {
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
 // import { Friends } from './components/Friends/Friends';
+// import { store } from './redux/redux-store'
 
 const App = (props) => {
   // console.log(props, 'APP')
