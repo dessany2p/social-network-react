@@ -1,6 +1,6 @@
 // import React, { createRef } from 'react';
 import s from './../Dialogs.module.css';
-import { creatorUpdateBodyNewMessage, creatorSendMessage } from '../../../redux/state';
+import { creatorUpdateBodyNewMessage, creatorSendMessage } from '../../../redux/dialogs-reducer';
 
 export const MsgItem = (props) => {
    console.log('props msgitem: ', props)

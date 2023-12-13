@@ -1,41 +1,10 @@
+import { dialogsReducer } from './dialogs-reducer'
+import { profileReducer } from './profile-reducer'
 import icon from './icons/1_icon.png'
 import icon2 from './icons/2_icon.png'
 import icon3 from './icons/3_icon.png'
 import icon4 from './icons/4_icon.png'
 import default_icon from './icons/default_icon.png'
-
-// Ввод в эксплутацию отдельных констант для сокращения дублирования кода и минимизации опечаток.
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const UPDATE_NEW_BODY_MESSAGE = 'UPDATE_NEW_BODY_MESSAGE'
-const SEND_MESSAGE = 'SEND_MESSAGE'
-
-// Выделяю логику возврата action в отдельные функции, которые экспортирую.
-
-export const actionCreatorAddPost = () => {
-   return {
-      type: ADD_POST
-   }
-}
-
-export const actionCreatorUpdateNewPostText = (text) => {
-   return {
-      type: UPDATE_NEW_POST_TEXT, newText: text
-   }
-}
-
-export const creatorSendMessage = () => {
-   return {
-      type: SEND_MESSAGE
-   }
-}
-
-export const creatorUpdateBodyNewMessage = (body) => {
-   return {
-      type: UPDATE_NEW_BODY_MESSAGE,
-      body: body,
-   }
-}
 
 export let store = {
    _state: {
@@ -53,14 +22,14 @@ export let store = {
          dialogs: [
             { id: 'user1', name: 'Никита', img: icon },
             { id: 'user2', name: 'Стас', img: icon2 },
-            // { id: 'user3', name: 'Гена', img: icon3 },
-            // { id: 'user4', name: 'Турбо', img: icon4 },
+            { id: 'user3', name: 'Турбо', img: icon3 },
+            // { id: 'user4', name: 'Гена', img: icon4 },
             { id: 'user5', name: 'Дюша Метёлкин', img: default_icon }
          ],
          msg: [
             { id: 'user1', text: 'ipsum dolor sit' },
             { id: 'user2', text: 'Lorem ipsum dolor bro' },
-            // { id: 'user3', text: 'Lorem ipsum sit bro' },
+            { id: 'user3', text: 'Lorem ipsum sit bro' },
             // { id: 'user4', text: 'Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. Warning: Each child in a list should have a unique "key" prop. Check the render method of `Dialogs`.See https://reactjs.org/link/warning-keys for more information. ' },
             { id: 'user5', text: 'dolor sit bro Метёлкин' }
          ],
@@ -79,53 +48,12 @@ export let store = {
       this._callSubscriber = observer;
    },
 
-   // TODO: Исходные методы, для дальнейшего рефакторинга. Пока закоментирую
-   // addInfo() {
-   //    let newPost = {
-   //       id: 5,
-   //       msg: this._state.profilePage.newPostText,
-   //       likesCount: 0
-   //    }
-   //    this._state.profilePage.posts.push(newPost)
-   //    this._state.profilePage.newPostText = '';
-
-   //    this._callSubscriber(this._state);
-   // },
-   // updateNewPostText(newText) {
-   //    this._state.profilePage.newPostText = newText;
-   //    this._callSubscriber(this._state)
-   // },
-
-   // Логика добавления постов вынесена в отдельный метод диспатч, с параметров action (где мы должны указать тип метода в виде строки)
-   // action => { type: 'ADD-POST' } 
    dispatchEvent(action) {
-      if (action.type === ADD_POST) {
-
-         let newPost = {
-            id: 5,
-            msg: this._state.profilePage.newPostText,
-            likesCount: 0
-         }
-
-         this._state.profilePage.posts.push(newPost)
-         this._state.profilePage.newPostText = '';
-         this._callSubscriber(this._state);
-
-      } else if (action.type === UPDATE_NEW_POST_TEXT) {
-         this._state.profilePage.newPostText = action.newText;
-         this._callSubscriber(this._state);
-      } else if (action.type === UPDATE_NEW_BODY_MESSAGE) {
-         this._state.msgPage.dialogs.newBodyMessage = action.body;
-         this._callSubscriber(this._state);
-      } else if (action.type === SEND_MESSAGE) {
-         let body = this._state.msgPage.dialogs.newBodyMessage;
-         this._state.msgPage.newBodyMessage = '';
-         this._state.msgPage.msg.push({
-            id: 2,
-            text: body,
-         });
-         this._callSubscriber(this._state);
-      }
+      // Редьюсеры принимают часть state и action - возвращают изменённый state.
+      this._state.profilePage = profileReducer(this._state.profilePage, action)
+      this._state.msgPage = dialogsReducer(this._state.msgPage, action)
+      // После редьюсеров вызывается отрисовщик.
+      this._callSubscriber(this._state)
    }
 }
 
