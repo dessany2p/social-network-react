@@ -4,6 +4,7 @@ import s from './MyPosts.module.css'
 import { CreatePost } from './CreatePost/CreatePost';
 
 export const MyPosts = (props) => {
+   // debugger
    // console.log(props, 'MyPosts props :')
    let postsElements =
       props.posts.map((p, i) => <Post key={i} msg={p.msg} likesCount={p.likesCount} />)
@@ -13,9 +14,9 @@ export const MyPosts = (props) => {
          <h3>My posts</h3>
 
          <CreatePost
-            value={props.newPostText}
+            updateNewPostText={props.updateNewPostText} addPost={props.addPost}
             posts={props.posts}
-            dispatch={props.dispatch} />
+            newPostText={props.newPostText} />
          {postsElements}
       </div>
    )

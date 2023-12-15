@@ -34,17 +34,16 @@ let initialState = {
       // { id: 'user5', text: 'dolor sit bro Метёлкин' }
    ],
    newBodyMessage: '',
-   sendMessage: '',
 }
 
 export const dialogsReducer = (state = initialState, action) => {
    switch (action.type) {
       case UPDATE_NEW_BODY_MESSAGE:
-         state.dialogs.newBodyMessage = action.body;
+         state.newBodyMessage = action.body;
          return state;
 
       case SEND_MESSAGE:
-         let body = state.dialogs.newBodyMessage;
+         let body = state.newBodyMessage;
          state.newBodyMessage = '';
          state.msg.push({ id: 2, text: body, });
          return state;

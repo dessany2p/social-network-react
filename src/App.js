@@ -3,7 +3,6 @@ import './App.css';
 
 import { Header } from './components/Header/Header';
 import { Navbar } from './components/Navbar/Navbar';
-import { Dialogs } from './components/Dialogs/Dialogs';
 import { Profile } from './components/Profile/Profile';
 import { News } from './components/News/News';
 import {
@@ -15,11 +14,12 @@ import {
 } from 'react-router-dom';
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
+import { DialogsContainer } from './components/Dialogs/DialogsContainer';
 // import { Friends } from './components/Friends/Friends';
 // import { store } from './redux/redux-store'
 
 const App = (props) => {
-  // console.log(props, 'APP')
+  console.log(props, 'APP')
   return (
     <Router>
       <div className="app-wrapper">
@@ -30,18 +30,16 @@ const App = (props) => {
             <Route path='/'
               element={
                 <Profile
-                  profilePage={props.state.profilePage}
-                  dispatch={props.dispatch}
+                  store={props.store}
                 />} />
             <Route path='/profile' element={
               <Profile
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
+                store={props.store}
               />} />
             <Route path='/dialogs'
               element={
-                <Dialogs
-                  state={props.state.msgPage} dispatch={props.dispatch}
+                <DialogsContainer
+                  store={props.store}
                 />} />
             <Route path='/news' Component={News} />
             <Route path='/music' Component={Music} />

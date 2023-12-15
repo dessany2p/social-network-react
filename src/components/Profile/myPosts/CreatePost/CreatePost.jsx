@@ -1,23 +1,19 @@
 import React from 'react';
 import s from './CreatePost.module.css'
-import { actionCreatorAddPost, actionCreatorUpdateNewPostText } from '../../../../redux/profile-reducer';
 
 
 export const CreatePost = (props) => {
-   console.log('create[pst', props)
-   console.log(props)
+   // debugger
+   //console.log('createpost', props)
    let newPostElement = React.createRef();
 
-   let createNewPost = () => {
-      // В функции через props обращаюсь к методу dispatch (Вызываю f, которая инкапсулирует объект с типом и значением), который хранит в себе логику добавления поста.
-      props.dispatch(actionCreatorAddPost())
+   let onAddPost = () => {
+      props.addPost();
    }
 
    let onPostChange = () => {
       let text = newPostElement.current.value;
-      // В функции через props обращаюсь к методу dispatch, который хранит в себе логику выведения символов в поле ввода.
-      // Выделяю этот объект (указывая тип/название метода: 'UPDATE-NEW-POST-TEXT' и его второй аргумент action.text = newText: text) -  (Вызываю f, которая инкапсулирует объект с типом и значением) (Вызываю f, которая инкапсулирует объект с типом и значением)
-      props.dispatch(actionCreatorUpdateNewPostText(text))
+      props.updateNewPostText(text);
    }
 
    return (
@@ -29,11 +25,11 @@ export const CreatePost = (props) => {
                onChange={onPostChange}
                posts={props.posts}
                className={s.entry__field}
-               value={props.value}
+               value={props.newPostText}
             />
          </div>
          <div>
-            <button onClick={createNewPost}> Отправить </button>
+            <button onClick={onAddPost}> Отправить </button>
          </div>
       </div >
    )

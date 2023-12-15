@@ -1,10 +1,11 @@
 import React from 'react';
-import { MyPosts } from './myPosts/MyPosts.jsx'
 import s from './Profile.module.css';
+import { MyPostsContainer } from './myPosts/MyPostsContainer.jsx';
 
 
 export const Profile = (props) => {
-   // console.log('profilePage:', props)
+   console.log('profilePage:', props)
+   let state = props.store.getState();
    return (
       <div>
 
@@ -21,10 +22,10 @@ export const Profile = (props) => {
             </div>
          </div>
 
-         <MyPosts
-            posts={props.profilePage.posts}
-            newPostText={props.profilePage.newPostText}
-            dispatch={props.dispatch}
+         <MyPostsContainer
+            posts={state.profilePage.posts}
+            newPostText={state.profilePage.newPostText}
+            dispatch={props.store.dispatch}
          />
       </div>
    )
