@@ -18,28 +18,31 @@ import { DialogsContainer } from './components/Dialogs/DialogsContainer';
 // import { Friends } from './components/Friends/Friends';
 // import { store } from './redux/redux-store'
 
+
 const App = (props) => {
-  console.log(props, 'APP')
+  // console.log(props, 'APP')
   return (
     <Router>
       <div className="app-wrapper">
         <Header />
-        <Navbar state={props.state.msgPage.dialogs} />
+        <Navbar
+        // state={props.state.msgPage.dialogs}
+        />
         <div className='content'>
           <Routes>
             <Route path='/'
               element={
                 <Profile
-                  store={props.store}
+                // store={props.store}
                 />} />
             <Route path='/profile' element={
               <Profile
-                store={props.store}
+              // store={props.store}
               />} />
             <Route path='/dialogs'
               element={
                 <DialogsContainer
-                  store={props.store}
+                // store={props.store}
                 />} />
             <Route path='/news' Component={News} />
             <Route path='/music' Component={Music} />
