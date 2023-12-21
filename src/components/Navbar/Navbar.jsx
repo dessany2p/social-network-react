@@ -18,14 +18,13 @@ export const Navbar = (props) => {
             <Link className={s.link} to='/news'> News </Link>
          </div>
          <div className={s.item}>
-            <Link className={`${s.link}`} to='/music'> Music </Link>
+            <Link className={s.link} to='/music'> Music </Link>
          </div>
          <div className={s.item}>
-            <Link className={`${s.link}`} to='/settings'> Settings </Link>
+            <Link className={s.link} to='/settings'> Settings </Link>
          </div>
          <div className={s.item}>
-            {/* <Link className={`${s.link}`} to='/friends'> Friends  </Link> */}
-            {/* {<Friend src={props.src} name={props.name} />} */}
+            <Link className={s.link} to='/users'> Users </Link>
          </div>
 
 

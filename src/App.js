@@ -12,7 +12,7 @@ import {
 import { Music } from './components/Music/Music';
 import { Settings } from './components/Settings/Settings';
 import { DialogsContainer } from './components/Dialogs/DialogsContainer';
-// import { Friends } from './components/Friends/Friends';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
   // console.log(props, 'APP')
@@ -32,7 +32,8 @@ const App = (props) => {
             <Route path='/news' Component={News} />
             <Route path='/music' Component={Music} />
             <Route path='/settings' element={<Settings />} />
-            {/* <Route path='/friends' element={<Friends } />} /> */}
+            <Route path='/users' element={
+              <UsersContainer />} />
           </Routes>
         </div>
       </div>
