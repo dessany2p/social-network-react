@@ -1,23 +1,18 @@
 import React from 'react';
 import s from './CreatePost.module.css'
 
-
 export const CreatePost = (props) => {
-   // debugger
    //console.log('createpost', props)
    let newPostElement = React.createRef();
-
    let onAddPost = () => {
       props.addPost();
    }
-
    let onPostChange = () => {
       let text = newPostElement.current.value;
       props.updateNewPostText(text);
    }
 
    return (
-
       <div className={s.container}>
          <div>
             <textarea
@@ -34,5 +29,3 @@ export const CreatePost = (props) => {
       </div >
    )
 }
-
-// {/* placeholder={props.placeholder}  */ }

@@ -5,26 +5,20 @@ import { DialogItem } from './Dialog/Dialog';
 
 
 export const Dialogs = (props) => {
-   console.log('Dialogs: ', props)
-
-
+   // console.log('Dialogs: ', props)
 
    let onSendMessageClick = () => {
       props.sendMessage();
    }
-
    let onNewMessageChange = (e) => {
       let body = e.target.value;
       props.updateBodyNewMessage(body);
    }
 
-
    let dialogsElements = props.dialog.map(
-
       (dialog, i) => <DialogItem key={dialog.id + i} src={dialog.img} id={dialog.id} name={dialog.name} />);
-
    let msgElements = props.msg.map(
-      msg => <MsgItem id={msg.id} text={msg.text} msgPage={props.msg} />);
+      (msg, i) => <MsgItem id={msg.id} key={msg.id + i} text={msg.text} msgPage={props.msg} />);
 
    return (
       <div className={s.container}>
@@ -43,7 +37,6 @@ export const Dialogs = (props) => {
                <button onClick={onSendMessageClick} className={s.btn_send}> send </button>
             </div>
          </div>
-
       </div>
    )
 }
