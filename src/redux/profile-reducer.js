@@ -33,11 +33,6 @@ export const profileReducer = (state = initialState, action) => {
             posts: [...state.posts, newPost],
             newPostText: ''
          }
-         // let copyState = { ...state }
-         // copyState.posts = [...state.posts]
-         // copyState.posts.push(newPost)
-         // copyState.newPostText = '';
-         // return copyState;
       }
 
 
@@ -46,11 +41,6 @@ export const profileReducer = (state = initialState, action) => {
             ...state,
             newPostText: action.newText
          }
-         // let copyState = { ...state }
-         // copyState.newPostText = action.newText;
-
-         // return copyState;
-
       }
 
       default: return state;
