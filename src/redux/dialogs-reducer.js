@@ -45,7 +45,7 @@ export const dialogsReducer = (state = initialState, action) => {
          return {
             ...state,
             newBodyMessage: '',
-            msg: [...state.msg, { id: 2, text: body }]
+            msg: [...state.msg, { id: 'user2', text: body }]
          };
       default:
          return state;

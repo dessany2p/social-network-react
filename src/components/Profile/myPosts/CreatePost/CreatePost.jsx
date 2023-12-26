@@ -2,13 +2,11 @@ import React from 'react';
 import s from './CreatePost.module.css'
 
 export const CreatePost = (props) => {
-   //console.log('createpost', props)
-   let newPostElement = React.createRef();
    let onAddPost = () => {
       props.addPost();
    }
-   let onPostChange = () => {
-      let text = newPostElement.current.value;
+   let onPostChange = (e) => {
+      let text = e.target.value;
       props.updateNewPostText(text);
    }
 
@@ -16,7 +14,6 @@ export const CreatePost = (props) => {
       <div className={s.container}>
          <div>
             <textarea
-               ref={newPostElement}
                onChange={onPostChange}
                posts={props.posts}
                className={s.entry__field}

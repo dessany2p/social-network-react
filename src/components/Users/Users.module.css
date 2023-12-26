@@ -1,0 +1,26 @@
+.container {
+   display: flex;
+   padding: 10px;
+   justify-content: flex-start;
+      align-items: center;
+}
+
+.profile {
+   display: flex;
+      flex-direction: column;
+      align-items: center;
+      button {
+         width: 60px;
+         height: 30px;
+         border-radius: 7px;
+      }
+}
+
+.box {
+      display: flex;
+         padding: 8px;
+   border: 1px solid gray;
+   margin: 0 0 0 20px;
+   border-radius: 15px;
+}
+
