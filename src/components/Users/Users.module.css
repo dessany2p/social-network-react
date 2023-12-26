@@ -22,5 +22,28 @@
    border: 1px solid gray;
    margin: 0 0 0 20px;
    border-radius: 15px;
+   
 }
 
+.box_span {
+   border-radius: 7px;
+   display: flex;
+   margin: 5px;
+   border: 1px solid gray;
+   padding: 0 20px;
+   width: fit-content;
+   margin: 10px auto;
+   cursor: pointer;
+}
+
+span {
+   padding: 5px;
+   margin: 5px;
+}
+.active {
+   padding: 0 5px;
+   color: greenyellow;
+   font-size: 18px;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   transition: all 0.4s;
+}
