@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import s from './Post.module.css';
-import icon from './heart_like.png'
+import icon from '../../../../assets/heart_like.png'
 
 export const Post = (props) => {
    const [count, setCount] = useState(0)
@@ -19,6 +19,5 @@ export const Post = (props) => {
             {props.likesCount + count}
          </span>
       </div>
-
    )
 }

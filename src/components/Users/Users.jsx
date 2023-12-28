@@ -1,6 +1,7 @@
 import React from "react";
 import icon2 from '../../redux/icons/2_icon.png'
 import s from './Users.module.css'
+import { NavLink } from "react-router-dom";
 
 let Users = (props) => {
 
@@ -22,13 +23,16 @@ let Users = (props) => {
       </div>
 
       {
-         props.users.map((u) => <div>
+         props.users.map((u) =>
             <div key={u.id} className={s.container}>
                <div className={s.profile}>
+
                   <div>
-                     <img src={u.photos.small !== null
-                        ? u.photos.small
-                        : icon2} alt="" />
+                     <NavLink to={'/profile/' + u.id}>
+                        <img src={u.photos.small !== null
+                           ? u.photos.small
+                           : icon2} alt="" />
+                     </NavLink>
                   </div>
 
                   {u.followed
@@ -49,7 +53,6 @@ let Users = (props) => {
                   </span>
                </div>
             </div>
-         </div>
          )
       }
    </div >

@@ -13,11 +13,11 @@ export const CreatePost = (props) => {
    return (
       <div className={s.container}>
          <div>
-            <textarea
+            <textarea className={s.entry__field}
                onChange={onPostChange}
                posts={props.posts}
-               className={s.entry__field}
                value={props.newPostText}
+               placeholder='Enter your message'
             />
          </div>
          <div>

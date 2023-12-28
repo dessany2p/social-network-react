@@ -5,7 +5,7 @@ import { DialogItem } from './Dialog/Dialog';
 
 
 export const Dialogs = (props) => {
-   // console.log('Dialogs: ', props)
+   console.log('Dialogs: ', props)
 
    let onSendMessageClick = () => {
       props.sendMessage();
@@ -33,7 +33,8 @@ export const Dialogs = (props) => {
                   value={props.newBodyMessage}
                   onChange={onNewMessageChange}
                   name="" id=""
-                  placeholder='Enter your message' />
+                  placeholder='Enter your message'
+               />
                <button onClick={onSendMessageClick} className={s.btn_send}> send </button>
             </div>
          </div>
