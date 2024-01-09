@@ -4,6 +4,7 @@ import Users from './Users'
 import { connect } from "react-redux";
 import { follow, setUsers, unfollow, setCurrentPage, setTotalUsersCount, toggleIsFetching } from "../../redux/users-reducer";
 import { Preloader } from '../common/Preloader/Preloader'
+import Numerations from "./Numerations";
 
 export class UsersContainer extends React.Component {
    componentDidMount() {
@@ -16,7 +17,6 @@ export class UsersContainer extends React.Component {
          })
    }
    onPageChanged = (pageNumber) => {
-      // console.log('onpostChanged:', this.props)
       this.props.toggleIsFetching(true)
       this.props.setCurrentPage(pageNumber);
       axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
@@ -25,11 +25,14 @@ export class UsersContainer extends React.Component {
             this.props.setUsers(Response.data.items)
          })
    }
+   //TODO: вынести пагинацию из <Users/> в отдельную компоненту, которая будет показываться одновременно с прелоадером.
    render() {
       // debugger
       return <>
-         {this.props.isFetching ? <Preloader /> : null}
-         <Users
+         {this.props.isFetching ? <>
+            <Numerations />
+            <Preloader />
+         </> : <Users
             totalUsersCount={this.props.totalUsersCount}
             pageSize={this.props.pageSize}
             currentPage={this.props.currentPage}
@@ -37,7 +40,8 @@ export class UsersContainer extends React.Component {
             users={this.props.users}
             follow={this.props.follow}
             unfollow={this.props.unfollow}
-         />
+         />}
+
       </>
    }
 }

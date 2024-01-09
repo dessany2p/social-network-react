@@ -2,31 +2,19 @@ import React from "react";
 import icon2 from '../../redux/icons/2_icon.png'
 import s from './Users.module.css'
 import { NavLink } from "react-router-dom";
+import Numerations from "./Numerations";
 
 let Users = (props) => {
-
-   let totalCount = Math.ceil(props.totalUsersCount / props.pageSize);
-   let pages = [];
-   for (let i = 1; i <= totalCount; i++) {
-      pages.push(i)
-   }
    // console.log(props)
    return <div>
-      <div className={s.box_span}>
-         {pages.map((p) => {
-            // debugger
-            return <span
-               className={props.currentPage === p ? s.active : undefined}
-               onClick={() => { props.onPageChanged(p) }}> {p}
-            </span>
-         })}
-      </div>
-
+      <Numerations totalUsersCount={props.totalUsersCount}
+         pageSize={props.pageSize}
+         currentPage={props.currentPage}
+         onPageChanged={props.onPageChanged} />
       {
          props.users.map((u) =>
             <div key={u.id} className={s.container}>
                <div className={s.profile}>
-
                   <div>
                      <NavLink to={'/profile/' + u.id}>
                         <img src={u.photos.small !== null

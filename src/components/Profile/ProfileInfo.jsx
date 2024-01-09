@@ -2,14 +2,14 @@ import s from './Profile.module.css';
 import { Preloader } from '../common/Preloader/Preloader'
 
 export const ProfileInfo = (props) => {
-   console.log(props)
+   // console.log(props)
    // debugger
    if (!props.profile) {
       return <Preloader />
    }
    return (
       <div>
-         <img className='banner' src='https://lemon.school/storage/2023/07/img_7017-780x258.png' alt=''></img>
+         {/* <img className='banner' src='https://lemon.school/storage/2023/07/img_7017-780x258.png' alt=''></img> */}
 
          <div className={s.profile__header}>
             {/* <img className={s.avatar} src='https://kaifolog.ru/uploads/posts/2023-02/1675414381_002.jpg' alt='avatar'></img> */}

@@ -4,7 +4,7 @@ import s from './MyPosts.module.css'
 import { CreatePost } from './CreatePost/CreatePost';
 
 export const MyPosts = (props) => {
-   console.log(props, 'MyPosts props :')
+   // console.log(props, 'MyPosts props :')
    let postsElements =
       props.profilePage.posts.map((p, i) => <Post key={i} msg={p.msg} likesCount={p.likesCount} />)
 
