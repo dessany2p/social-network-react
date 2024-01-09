@@ -2,6 +2,7 @@
    grid-area: h;
    background-color: aquamarine;
    display: flex;
+   justify-content: space-between
 }
 
 .logo__container {
@@ -22,5 +23,14 @@
    height: auto;
    cursor: pointer;
    margin-left: 80%;
+}
+
+.login {
+   display: flex;
+   align-items: center;
+   margin-right: 10px;
+   a {
+      color: white;
+   }
 }
 

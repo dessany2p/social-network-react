@@ -5,7 +5,7 @@ import { DialogItem } from './Dialog/Dialog';
 
 
 export const Dialogs = (props) => {
-   console.log('Dialogs: ', props)
+   // console.log('Dialogs: ', props)
 
    let onSendMessageClick = () => {
       props.sendMessage();

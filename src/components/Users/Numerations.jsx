@@ -3,7 +3,7 @@ import s from './Users.module.css';
 
 let Numerations = (props) => {
    // console.log(props)
-   debugger;
+   // debugger;
 
    let totalCount = Math.ceil(props.totalUsersCount / props.pageSize);
    let pages = [];
@@ -14,7 +14,6 @@ let Numerations = (props) => {
    return <div
       className={s.box_span}>
       {pages.map((p) => {
-         // debugger
          return <span
             className={props.currentPage === p ? s.active : undefined}
             onClick={() => { props.onPageChanged(p) }}> {p}
